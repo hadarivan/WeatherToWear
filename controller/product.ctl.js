@@ -24,12 +24,13 @@ async addProduct(req, res) { //add product
         season=null, 
         gender=null,
         age_range=null,
-        price=null
+        price=null,
+        image=null
     } = req.body;
     const result= await Product.find({id}); // checks if id already exist if not create a new product
     console.log(result.length);
     if(result.length===0){
-    const product = new Product({id, product_type, brand,season, gender,age_range,price})
+    const product = new Product({id, product_type, brand,season, gender,age_range,price,image})
 
     product.save(function (err) {
         if (err) { 
