@@ -92,7 +92,7 @@ async getProductBySGAB(req, res){  //show product by season,gender,age,brand
 },
 async getProductBySGABP(req, res){  //show product by season,gender,age,brand,price
     const {season=null} = req.params; 
-    const {gender=null, age_range = null, brand=null} = req.body; 
+    const {gender=null, age_range = null, brand=null, price=null} = req.body; 
     if(gender===null || age_range===null)
         return res.status(404).json("You must enter age range and gender");
     const result =await Product.find({season, gender, age_range,price:{$gte:0, $lte:parseInt(price)},brand})
