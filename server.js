@@ -29,6 +29,6 @@ app.post('/consumer/:season', productCtl.getProductBySGA); // S-season , G-gende
 /* routes for the consumer profile */
 app.post('/consumer/SGAP/:season', productCtl.getProductBySGAP); // S-season , G-gender, A-age, P-price
 app.post('/consumer/SGAB/:season', productCtl.getProductBySGAB); // S-season , G-gender, A-age, B-brand
-app.post('/consumer/SGAP/:season', productCtl.getProductBySGABP); // S-season , G-gender, A-age, P-price, B-brand
+app.post('/consumer/SGAPB/:season', productCtl.getProductBySGABP); // S-season , G-gender, A-age, P-price, B-brand
 app.all('*', productCtl.routeNotFound);
 app.listen(port, () => console.log(`listening on port ${port}`));
